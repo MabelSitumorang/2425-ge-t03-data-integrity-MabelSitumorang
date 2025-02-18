@@ -44,8 +44,8 @@ public class Driver1 {
         for (Student student : students) {
             System.out.println(student.toString());
         }
-        for (int i = enrollments.size() - 1; i >= 0; i--) {
-            System.out.println(enrollments.get(i).toString());
+        for (Enrollment enrollment : enrollments) {
+            System.out.println(enrollment.toString());
         }
         scanner.close();
     }
