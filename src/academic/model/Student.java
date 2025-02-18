@@ -6,7 +6,7 @@ package academic.model;
  */
 public class Student {
 
-    String nim;
+    public String nim;
     String nama;
     String tahun;
     String prodi;

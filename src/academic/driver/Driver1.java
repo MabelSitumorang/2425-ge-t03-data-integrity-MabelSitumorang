@@ -4,6 +4,7 @@ import academic.model.Student;
 import academic.model.Enrollment;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * @author 12S23011 Mabel Christoffel A.S
@@ -41,6 +42,7 @@ public class Driver1 {
         for (int i = courses.size() - 1; i >= 0; i--) {
             System.out.println(courses.get(i).toString());
         }
+        students.sort(Comparator.comparing(s -> s.nim));
         for (Student student : students) {
             System.out.println(student.toString());
         }

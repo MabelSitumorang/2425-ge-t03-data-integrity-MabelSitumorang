@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Course {
 
-    String id;
+    public String id;
     String course;
     String semester;
     String grade;
