@@ -3,7 +3,7 @@ import academic.model.Course;
 import academic.model.Student;
 import academic.model.Enrollment;
 import java.util.Scanner;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  * @author 12S23011 Mabel Christoffel A.S
@@ -13,9 +13,9 @@ public class Driver1 {
 
     public static void main(String[] _args) {
 
-        HashSet<Course> courses = new HashSet<Course>();
-        HashSet<Student> students = new HashSet<Student>();
-        HashSet<Enrollment> enrollments = new HashSet<Enrollment>();
+        ArrayList<Course> courses = new ArrayList<>();
+        ArrayList<Student> students = new ArrayList<>();
+        ArrayList<Enrollment> enrollments = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         String input;
 
@@ -38,14 +38,14 @@ public class Driver1 {
             }
         }
         
-        for (Course course : courses) {
-            System.out.println(course.toString());
+        for (int i = courses.size() - 1; i >= 0; i--) {
+            System.out.println(courses.get(i).toString());
         }
         for (Student student : students) {
             System.out.println(student.toString());
         }
-        for (Enrollment enrollment : enrollments) {
-            System.out.println(enrollment.toString());
+        for (int i = enrollments.size() - 1; i >= 0; i--) {
+            System.out.println(enrollments.get(i).toString());
         }
         scanner.close();
     }
