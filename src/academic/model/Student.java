@@ -1,11 +1,25 @@
 package academic.model;
 
 /**
- * @author NIM Nama
- * @author NIM Nama
+ * @author 12S23011 Mabel Christoffel A.S
+ * @author 12S23027 Amos Manurung
  */
 public class Student {
 
-    // class definition
+    String nim;
+    String nama;
+    String tahun;
+    String prodi;
+
+    public Student(String nim, String nama, String tahun, String prodi) {
+        this.nim = nim;
+        this.nama = nama;
+        this.tahun = tahun;
+        this.prodi = prodi;
+    }
+
+    public String toString() {
+        return nim + "|" + nama + "|" + tahun + "|" + prodi;
+    }
 
 }
