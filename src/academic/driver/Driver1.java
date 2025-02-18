@@ -42,10 +42,11 @@ public class Driver1 {
         for (int i = courses.size() - 1; i >= 0; i--) {
             System.out.println(courses.get(i).toString());
         }
-        students.sort(Comparator.comparing(s -> s.nim));
+        
         for (Student student : students) {
             System.out.println(student.toString());
         }
+        
         for (Enrollment enrollment : enrollments) {
             System.out.println(enrollment.toString());
         }
