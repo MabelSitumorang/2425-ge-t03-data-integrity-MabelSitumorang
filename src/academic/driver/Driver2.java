@@ -61,8 +61,8 @@ public class Driver2 {
         }
         
         // Display course data in input order
-        for (Course course : courses) {
-            System.out.println(course.toString());
+        for (int i = courses.size() - 1; i >= 0; i--) {
+            System.out.println(courses.get(i).toString());
         }
         
         // Display student data in input order
