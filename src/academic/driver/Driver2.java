@@ -1,4 +1,5 @@
 package academic.driver;
+
 import academic.model.Course;
 import academic.model.Student;
 import academic.model.Enrollment;
@@ -16,7 +17,7 @@ public class Driver2 {
         ArrayList<Course> courses = new ArrayList<>();
         ArrayList<Student> students = new ArrayList<>();
         ArrayList<Enrollment> enrollments = new ArrayList<>();
-        HashSet<String> errors = new HashSet<>();
+        ArrayList<String> errors = new ArrayList<>();
         
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -35,39 +36,41 @@ public class Driver2 {
                     students.add(new Student(parts[1], parts[2], parts[3], parts[4]));
                     break;
                 case "enrollment-add":
-                    boolean validCourse = isCourseValid(parts[1], courses);
                     boolean validStudent = isStudentValid(parts[2], students);
+                    boolean validCourse = isCourseValid(parts[1], courses);
                     
-                    if (validCourse && validStudent) {
-                        enrollments.add(new Enrollment(parts[1], parts[2], parts[3], parts[4]));
-                    } else {
-                        if (!validCourse) {
-                            errors.add("invalid course|" + parts[1]);
-                        }
+                    if (validCourse) {
                         if (!validStudent) {
                             errors.add("invalid student|" + parts[2]);
                         }
+                    }
+                    if (!validCourse) {
+                            errors.add("invalid course|" + parts[1]);
+                    }
+                    
+                    if (validStudent && validCourse) {
+                        enrollments.add(new Enrollment(parts[1], parts[2], parts[3], parts[4]));
                     }
                     break;
             }
         }
         
-        // Menampilkan pesan error (jika ada)
+        // Display error messages (if any) in the order of input
         for (String error : errors) {
             System.out.println(error);
         }
         
-        // Menampilkan data courses dalam urutan terbalik
-        for (int i = courses.size() - 1; i >= 0; i--) {
-            System.out.println(courses.get(i).toString());
+        // Display course data in input order
+        for (Course course : courses) {
+            System.out.println(course.toString());
         }
         
-        // Menampilkan data students dalam urutan input
+        // Display student data in input order
         for (Student student : students) {
             System.out.println(student.toString());
         }
         
-        // Menampilkan data enrollments
+        // Display enrollment data
         for (Enrollment enrollment : enrollments) {
             System.out.println(enrollment.toString());
         }
