@@ -66,7 +66,7 @@ public class Driver2 {
         }
         
         // Display student data in input order
-        for (Student student : students) {
+        for (Student student : students) {   
             System.out.println(student.toString());
         }
         
